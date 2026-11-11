@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 15 - Bootstrap 5 Components Showcase</title>
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+</head>
+<body class="bg-light">
+
+  <!-- 1. Navbar with Offcanvas Toggler -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <span class="text-white">Boot</span>Components
+      </a>
+      <!-- Offcanvas Trigger Button -->
+      <button
+        class="btn btn-outline-light btn-sm me-2"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarDrawer"
+        aria-controls="sidebarDrawer"
+      >
+        ☰ Drawer
+      </button>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#modal">Modals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tabs">Tabs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#accordion">Accordion</a></li>
+          <li class="nav-item"><a class="nav-link" href="#carousel">Carousel</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarDrawer" aria-labelledby="drawerTitle">
+    <div class="offcanvas-header bg-dark text-white">
+      <h5 class="offcanvas-title" id="drawerTitle">Component Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="text-muted">Offcanvas drawers slide out seamlessly from any viewport edge.</p>
+      <div class="list-group list-group-flush">
+        <a href="#modal" class="list-group-item list-group-item-action" data-bs-dismiss="offcanvas">Modals & Overlays</a>
+        <a href="#tabs" class="list-group-item list-group-item-action" data-bs-dismiss="offcanvas">Dynamic Tabs</a>
+        <a href="#accordion" class="list-group-item list-group-item-action" data-bs-dismiss="offcanvas">Collapsible Accordion</a>
+        <a href="#carousel" class="list-group-item list-group-item-action" data-bs-dismiss="offcanvas">Interactive Carousel</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="py-5 bg-white border-bottom text-center">
+    <div class="container py-4">
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 fw-semibold text-uppercase">
+        Day 15: Bootstrap 5 Components
+      </span>
+      <h1 class="display-4 fw-bold text-dark mt-2 mb-3">
+        Pre-built, Accessible UI Components
+      </h1>
+      <p class="lead text-secondary mx-auto mb-4" style="max-width: 720px;">
+        Bootstrap 5 offers interactive modals, offcanvas sidebars, animated carousels,
+        collapsible accordions, and dynamic tabs powered by pure modern JavaScript.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <!-- Trigger Modal -->
+        <button
+          type="button"
+          class="btn btn-primary btn-lg px-4 fw-semibold shadow-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#demoModal"
+        >
+          Open Modal Dialog
+        </button>
+        <!-- Trigger Toast -->
+        <button
+          type="button"
+          class="btn btn-outline-success btn-lg px-4 fw-semibold"
+          id="toastBtn"
+        >
+          Show Toast Alert 🔔
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container my-5">
+
+    <!-- 2. Carousel Component -->
+    <section id="carousel" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark">1. Carousel Component</h2>
+        <p class="text-muted">Image and content slider with autoplay and indicators</p>
+      </div>
+
+      <div id="heroCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="min-height: 240px; background: linear-gradient(135deg, #1e293b, #0f172a);">
+            <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+              <h3 class="fw-bold">Slide 1: Modals & Overlays</h3>
+              <p>Focus-trapped dialog windows with backdrop blur and smooth transitions.</p>
+            </div>
+          </div>
+          <div class="carousel-item" style="min-height: 240px; background: linear-gradient(135deg, #2563eb, #1d4ed8);">
+            <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+              <h3 class="fw-bold">Slide 2: Accessible Offcanvas</h3>
+              <p>Slide-out navigation drawers built for mobile-first experiences.</p>
+            </div>
+          </div>
+          <div class="carousel-item" style="min-height: 240px; background: linear-gradient(135deg, #10b981, #047857);">
+            <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+              <h3 class="fw-bold">Slide 3: Zero jQuery Required</h3>
+              <p>High performance ES6+ JavaScript handles all interactive states.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. Dynamic Tabs Component -->
+    <section id="tabs" class="p-4 p-md-5 bg-white border rounded-4 shadow-sm mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h2 class="h4 fw-bold text-dark mb-0">2. Navs & Tabs (Switching Content)</h2>
+        <ul class="nav nav-pills" id="componentTabs" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link active rounded-pill" data-bs-toggle="pill" data-bs-target="#tabCards">
+              Cards Grid
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#tabProgress">
+              Progress & Spinners
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#tabForms">
+              Floating Form
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="componentTabsContent">
+        <!-- Tab 1: Cards -->
+        <div class="tab-pane fade show active" id="tabCards">
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="bg-primary text-white p-4 text-center">
+                  <h4 class="fw-bold mb-0">Card Layout</h4>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h5 class="card-title fw-bold">Flexible Shell</h5>
+                  <p class="card-text text-secondary flex-grow-1">
+                    Containers that gracefully house media, titles, and actions.
+                  </p>
+                  <button class="btn btn-outline-primary btn-sm rounded-pill mt-3">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="bg-success text-white p-4 text-center">
+                  <h4 class="fw-bold mb-0">List Group</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Modal Component <span class="badge bg-success rounded-pill">Ready</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Offcanvas Drawer <span class="badge bg-primary rounded-pill">Active</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Carousel Slider <span class="badge bg-dark rounded-pill">v5.3</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="bg-warning text-dark p-4 text-center">
+                  <h4 class="fw-bold mb-0">Button Groups</h4>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <h5 class="card-title fw-bold">Action Toolbar</h5>
+                  <p class="card-text text-secondary flex-grow-1">
+                    Group series of buttons together on a single line.
+                  </p>
+                  <div class="btn-group w-100 mt-3">
+                    <button class="btn btn-outline-secondary btn-sm">Left</button>
+                    <button class="btn btn-outline-secondary btn-sm">Middle</button>
+                    <button class="btn btn-outline-secondary btn-sm">Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Progress & Spinners -->
+        <div class="tab-pane fade" id="tabProgress">
+          <div class="mb-4">
+            <h5 class="fw-semibold text-dark mb-3">Spinners</h5>
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <div class="spinner-border text-primary" role="status"></div>
+              <div class="spinner-border text-success" role="status"></div>
+              <div class="spinner-grow text-warning" role="status"></div>
+              <div class="spinner-grow text-danger" role="status"></div>
+              <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm me-2"></span> Loading...
+              </button>
+            </div>
+          </div>
+          <hr class="my-4 opacity-25" />
+          <div>
+            <h5 class="fw-semibold text-dark mb-2">Animated Progress Bars</h5>
+            <div class="progress mb-3" style="height: 20px;">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 75%">75%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Floating Form -->
+        <div class="tab-pane fade" id="tabForms">
+          <form onsubmit="event.preventDefault(); alert('Form submitted!');" class="p-2">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingName" placeholder="Sameer" required />
+                  <label for="floatingName">Your Name</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingMail" placeholder="name@example.com" required />
+                  <label for="floatingMail">Email Address</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch mt-2">
+                  <input class="form-check-input" type="checkbox" id="switchNotification" checked />
+                  <label class="form-check-label" for="switchNotification">Subscribe to component updates</label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary px-4 mt-3">Save Details</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Accordion (FAQs) -->
+    <section id="accordion" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark">3. Collapsible Accordion</h2>
+        <p class="text-muted">Standard pattern for FAQs and nested documentation</p>
+      </div>
+
+      <div class="accordion shadow-sm rounded-4 overflow-hidden" id="faqAccordion">
+        <div class="accordion-item border-0 border-bottom">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              What are Data Attributes in Bootstrap?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary bg-light">
+              Data attributes like <code>data-bs-toggle="modal"</code> and <code>data-bs-target="#demoModal"</code> allow developers to control complex JavaScript behavior entirely within HTML without writing custom scripts.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item border-0 border-bottom">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How does Bootstrap 5 handle accessibility?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary bg-light">
+              Components feature automated ARIA attributes, keyboard navigation traps for modals, and screen-reader compliant contrast ratios.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Can I customize Bootstrap component themes?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary bg-light">
+              Yes! Bootstrap 5 exposes CSS Custom Properties (e.g. <code>--bs-primary</code>, <code>--bs-modal-bg</code>) for seamless runtime overrides.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Dialog -->
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content shadow-lg border-0 rounded-4">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title fw-bold" id="modalLabel">Bootstrap Modal Dialog</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary py-3">
+          <p>This modal is triggered via data attributes (<code>data-bs-toggle="modal"</code>). It features focus trapping, backdrop dimming, and responsive placement.</p>
+        </div>
+        <div class="modal-footer border-top-0">
+          <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1090;">
+    <div id="liveToast" class="toast shadow-lg border-0 rounded-3" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">Notification</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body bg-white text-dark">
+        🎉 Interactive Bootstrap Toast notification triggered!
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-white border-top text-center text-muted">
+    <div class="container">
+      <p class="mb-0">© 2026 Frontend Mastery — Day 15: Bootstrap 5 Components</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    const toastBtn = document.getElementById('toastBtn');
+    const toastLive = document.getElementById('liveToast');
+    if (toastBtn && toastLive) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLive);
+      toastBtn.addEventListener('click', () => {
+        toastBootstrap.show();
+      });
+    }
+  </script>
+</body>
+</html>

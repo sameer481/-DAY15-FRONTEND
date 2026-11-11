@@ -1,0 +1,10 @@
+/* Custom Scoped Overrides for BootstrapComponentsDemo */
+.wrapper {
+  max-width: 1140px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e7f1ff;
+  color: #0c63e4;
+}
